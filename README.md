@@ -4,4 +4,4 @@
 By [[Jinshan Pan](https://jspan.github.io/)], [[Haoran Bai](https://csbhr.github.io/)], [Jinhui Tang]
 
 ### Updates
-Test code is coming soon!
+- Test code is coming soon!

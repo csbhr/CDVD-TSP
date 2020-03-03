@@ -8,7 +8,7 @@ By [[Jinshan Pan](https://jspan.github.io/)], [[Haoran Bai](https://csbhr.github
 
 ## Dependencies
 
-- Linux (tested on Ubuntu 18.04)
+- Linux (Tested on Ubuntu 18.04)
 - Python 3 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
 - [PyTorch 0.4.1](https://pytorch.org/): `conda install pytorch=0.4.1 torchvision cudatoolkit=9.2 -c pytorch`
 - numpy: `conda install numpy`
@@ -22,7 +22,7 @@ By [[Jinshan Pan](https://jspan.github.io/)], [[Haoran Bai](https://csbhr.github
 ## Get Started
 
 ### Testing
-1. Download the [pre-trained model](https://github.com/csbhr/CDVD-TSP), and put them to ./pretrain_models .
-2. Download the [testing datasts](https://github.com/csbhr/CDVD-TSP), and put them to ./dataset .
+1. Download the pre-trained model, and put them to ./pretrain_models [Baidu Yun(提取码: j6jb)](https://pan.baidu.com/s/1aVfLcPWpaqt8ljqXGJXRig)
+2. Download the testing datasts, and put them to ./dataset [Baidu Yun(提取码: j6jb)](https://pan.baidu.com/s/1aVfLcPWpaqt8ljqXGJXRig)
 3. Run `python ./code/inference.py`
 4. The deblured result will be in ./infer_results .

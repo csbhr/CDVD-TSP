@@ -22,7 +22,7 @@ By [[Jinshan Pan](https://jspan.github.io/)], [[Haoran Bai](https://csbhr.github
 ## Get Started
 
 ### Testing
-1. Download the pre-trained model, and put them to ./pretrain_models [Baidu Yun(提取码: j6jb)](https://pan.baidu.com/s/1aVfLcPWpaqt8ljqXGJXRig)
-2. Download the testing datasts, and put them to ./dataset [Baidu Yun(提取码: j6jb)](https://pan.baidu.com/s/1aVfLcPWpaqt8ljqXGJXRig)
+1. Download the pre-trained model, and put them to './pretrain_models'. [BaiduYun(提取码: j6jb)](https://pan.baidu.com/s/1aVfLcPWpaqt8ljqXGJXRig)
+2. Download the testing datasts, and put them to './dataset'. [BaiduYun(提取码: j6jb)](https://pan.baidu.com/s/1aVfLcPWpaqt8ljqXGJXRig)
 3. Run `python ./code/inference.py`
-4. The deblured result will be in ./infer_results .
+4. The deblured result will be in './infer_results'.

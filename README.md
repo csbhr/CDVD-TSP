@@ -29,14 +29,14 @@ By [[Jinshan Pan](https://jspan.github.io/)], [[Haoran Bai](https://csbhr.github
 ### Testing
 
 #### Quick test
-1. Download the pre-trained models.
+1. Download the pretrained models.
 2. Download the testing datasts.
 3. Run `python ./code/inference.py --default_data DVD`
   - default_data: the dataset you want to test, optional: DVD, GOPRO
 4. The deblured result will be in './infer_results'.
 
 #### Test your own data
-1. Download the pre-trained models.
+1. Download the pretrained models.
 2. Run `python ./code/inference.py --data_path path/to/data --model_path path/to/pretrained/model`
   - data_path: the path of you own data. **(There must be two subfolder namely blur and gt.)**
   - model_path: the path of you pretrained model.

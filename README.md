@@ -4,7 +4,7 @@
 By [[Jinshan Pan](https://jspan.github.io/)], [[Haoran Bai](https://csbhr.github.io/)], [Jinhui Tang]
 
 ### Updates
-[2020-03-04] Testing codes are available!
+[2020-03-04] Testing code is available!
 
 ## Dependencies
 

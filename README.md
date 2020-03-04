@@ -30,7 +30,7 @@ By [[Jinshan Pan](https://jspan.github.io/)], [[Haoran Bai](https://csbhr.github
 1. Download the pre-trained models.
 2. Download the testing datasts.
 3. Run `python ./code/inference.py --default_data DVD`
-- Argument default_data: the dataset you want to test, optional: DVD, GOPRO
+  - Argument default_data: the dataset you want to test, optional: DVD, GOPRO
 4. The deblured result will be in './infer_results'.
 #### Test your own data
 1. Download the pre-trained models.

@@ -20,9 +20,17 @@ By [[Jinshan Pan](https://jspan.github.io/)], [[Haoran Bai](https://csbhr.github
 - cupy: `conda install -c anaconda cupy`
 
 ## Get Started
+### Download
+- Pretrained models and Datasets can be downloaded from [Here](https://pan.baidu.com/s/1aVfLcPWpaqt8ljqXGJXRig).
+- If you have to download pretrained models，please put them to './pretrain_models'.
+- If you have to download datasets，please put them to './dataset'.
 
 ### Testing
-1. Download the pre-trained model, and put them to './pretrain_models'. [BaiduYun(提取码: j6jb)](https://pan.baidu.com/s/1aVfLcPWpaqt8ljqXGJXRig)
-2. Download the testing datasts, and put them to './dataset'. [BaiduYun(提取码: j6jb)](https://pan.baidu.com/s/1aVfLcPWpaqt8ljqXGJXRig)
-3. Run `python ./code/inference.py`
+#### Quick test
+1. Download the pre-trained models.
+2. Download the testing datasts.
+3. Run `python ./code/inference.py --default_data DVD`
+- Argument default_data: the dataset you want to test, optional: DVD, GOPRO
 4. The deblured result will be in './infer_results'.
+#### Test your own data
+1. Download the pre-trained models.

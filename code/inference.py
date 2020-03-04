@@ -216,15 +216,28 @@ class Inference:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='CDVD-TSP-Inference')
+
     parser.add_argument('--save_image', action='store_true', help='save image if true')
     parser.add_argument('--border', action='store_true', help='restore border images of video if true')
+
+    parser.add_argument('--default_data', type=str, default='.',
+                        help='quick test, optional: DVD, GOPRO')
     parser.add_argument('--data_path', type=str, default='../dataset/DVD/test',
                         help='the path of test data')
-    parser.add_argument('--model_path', type=str, default='../pretrain_models/CDVD_TSP.pt',
+    parser.add_argument('--model_path', type=str, default='../pretrain_models/CDVD_TSP_DVD.pt',
                         help='the path of pretrain model')
     parser.add_argument('--result_path', type=str, default='../infer_results',
                         help='the path of deblur result')
     args = parser.parse_args()
+
+    if args.default_data == 'DVD':
+        args.data_path = '../dataset/DVD/test'
+        args.model_path = '../pretrain_models/CDVD_TSP_DVD.pt'
+        args.result_path = '../infer_results/DVD'
+    elif args.default_data == 'GOPRO':
+        args.data_path = '../dataset/GOPRO/test'
+        args.model_path = '../pretrain_models/CDVD_TSP_GOPRO.pt'
+        args.result_path = '../infer_results/GOPRO'
 
     Infer = Inference(args)
     Infer.infer()

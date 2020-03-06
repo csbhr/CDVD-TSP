@@ -1,5 +1,5 @@
 # CDVD-TSP
-#### [Paper](https://github.com/csbhr/CDVD-TSP) | [Project Page](https://github.com/csbhr/CDVD-TSP) | [Discussion](https://github.com/csbhr/CDVD-TSP)
+#### [Paper](https://csbhr.github.io/projects/cdvd-tsp/index.html) | [Project Page](https://csbhr.github.io/projects/cdvd-tsp/index.html) | [Discussion](https://csbhr.github.io/projects/cdvd-tsp/index.html)
 ### Cascaded Deep Video Deblurring Using Temporal Sharpness Prior
 By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://csbhr.github.io/), Jinhui Tang
 

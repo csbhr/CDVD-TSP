@@ -9,8 +9,8 @@
 By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://csbhr.github.io/), Jinhui Tang
 
 ## Updates
-- [2020-03-07] Add training code!
-- [2020-03-04] Testing code is available!
+[2020-03-07] Add training code!  
+[2020-03-04] Testing code is available!
 
 ## Experimental Results
 Deblurred result on a real challenging video. Our algorithm is motivated by the success of variational model-based methods. It explores sharpness pixels from adjacent frames by a temporal sharpness prior (see (f)) and restores sharp videos by a cascaded inference process. As our analysis shows, enforcing the temporal sharpness prior in a deep convolutional neural network (CNN) and learn it by a cascaded inference manner is able to make the deep CNN more compact and thus generates better deblurred results than both the CNN-based methods [28, 32] and variational model-based method [12]. All the compared results are obtained from the reported results.  

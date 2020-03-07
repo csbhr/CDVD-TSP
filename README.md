@@ -2,7 +2,7 @@
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-green)](https://github.com/csbhr/CDVD-TSP/blob/master/LICENSE)
 [![Python](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/)
-![PyTorch](https://img.shields.io/badge/pytorch-0.4.1-%237732a8)
+[![PyTorch](https://img.shields.io/badge/pytorch-0.4.1-%237732a8)](https://pytorch.org/)
 
 #### [Paper](https://csbhr.github.io/projects/cdvd-tsp/index.html) | [Project Page](https://csbhr.github.io/projects/cdvd-tsp/index.html) | [Discussion](https://csbhr.github.io/projects/cdvd-tsp/index.html)
 ### Cascaded Deep Video Deblurring Using Temporal Sharpness Prior

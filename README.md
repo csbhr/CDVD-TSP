@@ -16,7 +16,7 @@ As demonstrated in [4], the blur in the video is irregular, and thus there exist
 <img src="https://latex.codecogs.com/gif.latex?S_i(x)=exp(-\frac{1}{2}\sum_{j\&j\neq&space;0}D(I_{i&plus;j\rightarrow&space;i}(x&plus;u_{i&plus;j\rightarrow&space;i});I_i(x)))"/>  
 where <img src="https://latex.codecogs.com/gif.latex?D(I_{i&plus;j}(x&plus;u_{i&plus;j&space;\rightarrow&space;i});&space;I_i(x))"/>  is defined as <img src="https://latex.codecogs.com/gif.latex?\left&space;\|&space;I_{i&plus;j}(x&plus;u_{i&plus;j&space;\rightarrow&space;i}&space;-&space;I_i(x)&space;\right&space;\|^2"/>.  
 Based on (10), if the value of <img src="https://latex.codecogs.com/gif.latex?S_i(x)"/> is close to 1, the pixel x is likely to be clear. Thus, we can use <img src="https://latex.codecogs.com/gif.latex?S_i(x)"/> to help the deep neural network to distinguish whether the pixel is clear or not so that it can help the latent frame restoration. To increase the robustness of <img src="https://latex.codecogs.com/gif.latex?S_i(x)"/>, we define <img src="https://latex.codecogs.com/gif.latex?D(.)"/> as:  
-<img src="https://latex.codecogs.com/gif.latex?D(I_{i&plus;j}(x&plus;u_{i&plus;j&space;\rightarrow&space;i});&space;I_i(x))&space;=&space;\sum_{y\in&space;\omega(x)}&space;\left&space;\|&space;I_{i&plus;j}(x&plus;u_{i&plus;j&space;\rightarrow&space;i}&space;-&space;I_i(x)&space;\right&space;\|^2"/>
+<img src="https://latex.codecogs.com/gif.latex?D(I_{i&plus;j}(x&plus;u_{i&plus;j&space;\rightarrow&space;i});&space;I_i(x))&space;=&space;\sum_{y\in&space;\omega(x)}&space;\left&space;\|&space;I_{i&plus;j}(x&plus;u_{i&plus;j&space;\rightarrow&space;i}&space;-&space;I_i(x)&space;\right&space;\|^2"/>  
 where <img src="https://latex.codecogs.com/gif.latex?\omega(x)"/> denotes an image patch centerd at pixel x .
 #### Cascaded Training
 As the proposed algorithm estimates optical flow from intermediate latent frames as the motion blur information, it requires a feedback loop. To effectively train the proposed algorithm, we develop a cascaded training approach and jointly train the proposed model in an end-to-end manner. The main steps of the cascaded training approach is as follows, where T denotes the number of stages:  
@@ -44,7 +44,7 @@ Deblurred results on the test dataset [25]. The deblurred results in (c)-(g) sti
 ## Get Started
 
 ### Download
-- Pretrained models and Datasets can be downloaded from [Here](https://drive.google.com/drive/folders/1lw_1jITafEQ9DvMys_S6aYwtNApYKWsz?usp=sharing).
+- Pretrained models and Datasets can be downloaded [Here](https://drive.google.com/drive/folders/1lw_1jITafEQ9DvMys_S6aYwtNApYKWsz?usp=sharing).
 	- If you have downloaded the pretrained models，please put them to './pretrain_models'.
 	- If you have downloaded the datasets，please put them to './dataset'.
 
@@ -79,8 +79,8 @@ If you prepare your own dataset, please follow the following form:
 ```
 cd ./code
 python inference.py --default_data DVD
+		# --default_data: the dataset you want to test, optional: DVD, GOPRO
 ```
-  - --default_data: the dataset you want to test, optional: DVD, GOPRO
 - The deblured result will be in './infer_results'.
 
 #### Test Your Own Dataset
@@ -90,9 +90,9 @@ python inference.py --default_data DVD
 ```
 cd ./code
 python inference.py --data_path path/to/data --model_path path/to/pretrained/model
+		# --data_path: the path of your dataset.
+		# --model_path: the path of the downloaded pretrained model.
 ```
-  - --data_path: the path of your dataset.
-  - --model_path: the path of the downloaded pretrained model.
 - The deblured result will be in './infer_results'.
 
 ### Training
@@ -102,12 +102,12 @@ python inference.py --data_path path/to/data --model_path path/to/pretrained/mod
 ```
 cd ./code
 python main.py --save path/to/save --dir_data path/to/train/dataset --dir_data_test path/to/val/dataset --epochs 500 --batch_size 8
+		# --save: the experiment result will be in './experiment/save'.
+		# --dir_data: the path of the training dataset.
+		# --dir_data_test: the path of the evaluating dataset during training process.
+		# --epochs: the number of training epochs.
+		# --batch_size: the mini batch size.
 ```
-  - --save: the experiment result will be in './experiment/save'.
-  - --dir_data: the path of the training dataset.
-  - --dir_data_test: the path of the evaluating dataset during training process.
-  - --epochs: the number of training epochs.
-  - --batch_size: the mini batch size.
 
 ## Citation
 ```

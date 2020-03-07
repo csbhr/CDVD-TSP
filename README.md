@@ -70,6 +70,20 @@ If you prepare your own dataset, please follow the following form:
         |--video n
 ```
 
+### Training
+- Download the PWC-Net pretrained model.
+- Download training dataset, or prepare your own dataset like above form.
+- Run the following commands:
+```
+cd ./code
+python main.py --save path/to/save --dir_data path/to/train/dataset --dir_data_test path/to/val/dataset --epochs 500 --batch_size 8
+	# --save: the experiment result will be in './experiment/save'.
+	# --dir_data: the path of the training dataset.
+	# --dir_data_test: the path of the evaluating dataset during training process.
+	# --epochs: the number of training epochs.
+	# --batch_size: the mini batch size.
+```
+
 ### Testing
 
 #### Quick Test
@@ -94,20 +108,6 @@ python inference.py --data_path path/to/data --model_path path/to/pretrained/mod
 	# --model_path: the path of the downloaded pretrained model.
 ```
 - The deblured result will be in './infer_results'.
-
-### Training
-- Download the PWC-Net pretrained model.
-- Download training dataset, or prepare your own dataset like above form.
-- Run the following commands:
-```
-cd ./code
-python main.py --save path/to/save --dir_data path/to/train/dataset --dir_data_test path/to/val/dataset --epochs 500 --batch_size 8
-	# --save: the experiment result will be in './experiment/save'.
-	# --dir_data: the path of the training dataset.
-	# --dir_data_test: the path of the evaluating dataset during training process.
-	# --epochs: the number of training epochs.
-	# --batch_size: the mini batch size.
-```
 
 ## Citation
 ```

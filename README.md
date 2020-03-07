@@ -79,7 +79,7 @@ If you prepare your own dataset, please follow the following form:
 ```
 cd ./code
 python inference.py --default_data DVD
-		# --default_data: the dataset you want to test, optional: DVD, GOPRO
+	# --default_data: the dataset you want to test, optional: DVD, GOPRO
 ```
 - The deblured result will be in './infer_results'.
 
@@ -90,8 +90,8 @@ python inference.py --default_data DVD
 ```
 cd ./code
 python inference.py --data_path path/to/data --model_path path/to/pretrained/model
-		# --data_path: the path of your dataset.
-		# --model_path: the path of the downloaded pretrained model.
+	# --data_path: the path of your dataset.
+	# --model_path: the path of the downloaded pretrained model.
 ```
 - The deblured result will be in './infer_results'.
 
@@ -102,11 +102,11 @@ python inference.py --data_path path/to/data --model_path path/to/pretrained/mod
 ```
 cd ./code
 python main.py --save path/to/save --dir_data path/to/train/dataset --dir_data_test path/to/val/dataset --epochs 500 --batch_size 8
-		# --save: the experiment result will be in './experiment/save'.
-		# --dir_data: the path of the training dataset.
-		# --dir_data_test: the path of the evaluating dataset during training process.
-		# --epochs: the number of training epochs.
-		# --batch_size: the mini batch size.
+	# --save: the experiment result will be in './experiment/save'.
+	# --dir_data: the path of the training dataset.
+	# --dir_data_test: the path of the evaluating dataset during training process.
+	# --epochs: the number of training epochs.
+	# --batch_size: the mini batch size.
 ```
 
 ## Citation

@@ -8,20 +8,6 @@ By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://csbhr.github.io
 - [2020-03-07] Add training code!
 - [2020-03-04] Testing code is available!
 
-## Proposed Algorithm
-The proposed algorithm contains the optical flow estimation module, latent image restoration module, and the temporal sharpness prior.
-![proposed-method-overview](./imgs/proposed-method-overview.png)
-#### Temporal sharpness prior
-As demonstrated in [4], the blur in the video is irregular, and thus there exist some pixels that are not blurred. Following the conventional method [4], we explore these sharpness pixels to help video deblurring. The sharpness prior is defined as:  
-<img src="https://latex.codecogs.com/gif.latex?S_i(x)=exp(-\frac{1}{2}\sum_{j\&j\neq&space;0}D(I_{i&plus;j\rightarrow&space;i}(x&plus;u_{i&plus;j\rightarrow&space;i});I_i(x)))"/>  
-where <img src="https://latex.codecogs.com/gif.latex?D(I_{i&plus;j}(x&plus;u_{i&plus;j&space;\rightarrow&space;i});&space;I_i(x))"/>  is defined as <img src="https://latex.codecogs.com/gif.latex?\left&space;\|&space;I_{i&plus;j}(x&plus;u_{i&plus;j&space;\rightarrow&space;i}&space;-&space;I_i(x)&space;\right&space;\|^2"/>.  
-Based on (10), if the value of <img src="https://latex.codecogs.com/gif.latex?S_i(x)"/> is close to 1, the pixel x is likely to be clear. Thus, we can use <img src="https://latex.codecogs.com/gif.latex?S_i(x)"/> to help the deep neural network to distinguish whether the pixel is clear or not so that it can help the latent frame restoration. To increase the robustness of <img src="https://latex.codecogs.com/gif.latex?S_i(x)"/>, we define <img src="https://latex.codecogs.com/gif.latex?D(.)"/> as:  
-<img src="https://latex.codecogs.com/gif.latex?D(I_{i&plus;j}(x&plus;u_{i&plus;j&space;\rightarrow&space;i});&space;I_i(x))&space;=&space;\sum_{y\in&space;\omega(x)}&space;\left&space;\|&space;I_{i&plus;j}(x&plus;u_{i&plus;j&space;\rightarrow&space;i}&space;-&space;I_i(x)&space;\right&space;\|^2"/>  
-where <img src="https://latex.codecogs.com/gif.latex?\omega(x)"/> denotes an image patch centerd at pixel x .
-#### Cascaded Training
-As the proposed algorithm estimates optical flow from intermediate latent frames as the motion blur information, it requires a feedback loop. To effectively train the proposed algorithm, we develop a cascaded training approach and jointly train the proposed model in an end-to-end manner. The main steps of the cascaded training approach is as follows, where T denotes the number of stages:  
-![proposed-method-overview](./imgs/proposed-method-summarize.png)
-
 ## Experimental Results
 Quantitative evaluations on the video deblurring dataset [25] in terms of PSNR and SSIM. All the comparison results are generated using the publicly available code. All the restored frames instead of randomly selected 30 frames from each test set [25] are used for evaluations.
 ![proposed-method-overview](./imgs/quantitative-eval-dvd-result.png)
@@ -113,7 +99,7 @@ python inference.py --data_path path/to/data --model_path path/to/pretrained/mod
 ```
 @inproceedings{CDVD-TSP,
   title={Cascaded Deep Video Deblurring Using Temporal Sharpness Prior},
-  author={Bai, Haoran and Pan, Jinshan and Tang, Jinhui},
+  author={Pan, Jinshan and Bai, Haoran and Tang, Jinhui},
   booktitle={IEEE Conference on Computer Vision and Pattern Recognition},
   year={2020}
 }

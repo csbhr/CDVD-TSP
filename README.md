@@ -6,19 +6,25 @@
 
 #### [Paper](https://baihaoran.xyz/projects/cdvd-tsp/index.html) | [Project Page](https://baihaoran.xyz/projects/cdvd-tsp/index.html) | [Discussion](https://github.com/csbhr/CDVD-TSP/issues)
 ### Cascaded Deep Video Deblurring Using Temporal Sharpness Prior
-By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://baihaoran.xyz/), Jinhui Tang
+By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://baihaoran.xyz/about), and Jinhui Tang
 
 ## Updates
 [2020-03-07] Add training code!  
 [2020-03-04] Testing code is available!
 
 ## Experimental Results
-Deblurred result on a real challenging video. Our algorithm is motivated by the success of variational model-based methods. It explores sharpness pixels from adjacent frames by a temporal sharpness prior (see (f)) and restores sharp videos by a cascaded inference process. As our analysis shows, enforcing the temporal sharpness prior in a deep convolutional neural network (CNN) and learn it by a cascaded inference manner is able to make the deep CNN more compact and thus generates better deblurred results than both the CNN-based methods [28, 32] and variational model-based method [12]. All the compared results are obtained from the reported results.  
-![top-result](./imgs/top-result.png)  
-Quantitative evaluations on the video deblurring dataset [25] in terms of PSNR and SSIM. All the comparison results are generated using the publicly available code. All the restored frames instead of randomly selected 30 frames from each test set [25] are used for evaluations.  
-![proposed-method-overview](./imgs/quantitative-eval-dvd-result.png)  
-Deblurred results on the test dataset [25]. The deblurred results in (c)-(g) still contain significant blur effects. The proposed algorithm generates much clearer frames.  
-![proposed-method-overview](./imgs/visual-comparsion-dvd-result.png)
+Our algorithm is motivated by the success of variational model-based methods. It explores sharpness pixels from adjacent frames by a temporal sharpness prior (see (f)) and restores sharp videos by a cascaded inference process. As our analysis shows, enforcing the temporal sharpness prior in a deep convolutional neural network (CNN) and learning the deep CNN by a cascaded inference manner can make the deep CNN more compact and thus generate better-deblurred results than both the CNN-based methods [27, 32] and variational model-based method [12].  
+![top-result](https://s1.ax1x.com/2020/03/31/GQnfpt.png)  
+
+We further train the proposed method to convergence, and get higher PSNR/SSIM than the result reported in the paper.  
+
+Quantitative results on the benchmark dataset by Su et al. [24]. All the restored frames instead of randomly selected 30 frames from each test set [24] are used for evaluations. *Note that: Ours * is the result that we further trained to convergence, and Ours is the result reported in the paper.*  
+![table-1](https://s1.ax1x.com/2020/03/31/GQOAv6.png)  
+
+Quantitative results on the GOPRO dataset by Nah et al.[20].  
+![table-2](https://s1.ax1x.com/2020/03/31/GQYZi8.png)  
+
+More detailed analysis and experimental results are included in [Project Page](https://baihaoran.xyz/projects/cdvd-tsp/index.html).
 
 ## Dependencies
 

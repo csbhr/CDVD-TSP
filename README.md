@@ -9,6 +9,7 @@
 By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://baihaoran.xyz/about), and Jinhui Tang
 
 ## Updates
+[2020-03-31] We further train the model to convergence, and the pretrained model is available!  
 [2020-03-07] Add training code!  
 [2020-03-04] Testing code is available!
 

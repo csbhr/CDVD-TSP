@@ -4,11 +4,12 @@
 [![Python](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/pytorch-0.4.1-%237732a8)](https://pytorch.org/)
 
-#### [Paper](https://baihaoran.xyz/projects/cdvd-tsp/index.html) | [Project Page](https://baihaoran.xyz/projects/cdvd-tsp/index.html) | [Discussion](https://github.com/csbhr/CDVD-TSP/issues)
+#### [Paper](https://arxiv.org/abs/2004.02501) | [Project Page](https://baihaoran.xyz/projects/cdvd-tsp/index.html) | [Discussion](https://github.com/csbhr/CDVD-TSP/issues)
 ### Cascaded Deep Video Deblurring Using Temporal Sharpness Prior
 By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://baihaoran.xyz/about), and Jinhui Tang
 
 ## Updates
+[2020-03-07] Paper is available!  
 [2020-03-31] We further train the model to convergence, and the pretrained model is available!  
 [2020-03-07] Add training code!  
 [2020-03-04] Testing code is available!

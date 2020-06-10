@@ -111,10 +111,11 @@ python inference.py --data_path path/to/data --model_path path/to/pretrained/mod
 
 ## Citation
 ```
-@inproceedings{CDVD-TSP,
-  title={Cascaded Deep Video Deblurring Using Temporal Sharpness Prior},
-  author={Pan, Jinshan and Bai, Haoran and Tang, Jinhui},
-  booktitle={IEEE Conference on Computer Vision and Pattern Recognition},
-  year={2020}
+@InProceedings{Pan_2020_CVPR,
+	author = {Pan, Jinshan and Bai, Haoran and Tang, Jinhui},
+	title = {Cascaded Deep Video Deblurring Using Temporal Sharpness Prior},
+	booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+	month = {June},
+	year = {2020}
 }
 ```

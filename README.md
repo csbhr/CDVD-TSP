@@ -9,7 +9,7 @@
 By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://baihaoran.xyz/about), and Jinhui Tang
 
 ## Updates
-[2020-08-04] Inference logs are available[Here](https://drive.google.com/drive/folders/1lw_1jITafEQ9DvMys_S6aYwtNApYKWsz?usp=sharing)!  
+[2020-08-04] Inference logs are available [[Here](https://drive.google.com/drive/folders/1lw_1jITafEQ9DvMys_S6aYwtNApYKWsz?usp=sharing)]!  
 [2020-03-07] Paper is available!  
 [2020-03-31] We further train the model to convergence, and the pretrained model is available!  
 [2020-03-07] Add training code!  
@@ -27,7 +27,7 @@ Quantitative results on the benchmark dataset by Su et al. [24]. All the restore
 Quantitative results on the GOPRO dataset by Nah et al.[20].  
 ![table-2](https://s1.ax1x.com/2020/03/31/GQYZi8.png)  
 
-More detailed analysis and experimental results are included in [Project Page](https://baihaoran.xyz/projects/cdvd-tsp/index.html).
+More detailed analysis and experimental results are included in [[Project Page](https://baihaoran.xyz/projects/cdvd-tsp/index.html)].
 
 ## Dependencies
 
@@ -45,7 +45,7 @@ More detailed analysis and experimental results are included in [Project Page](h
 ## Get Started
 
 ### Download
-- Pretrained models and Datasets can be downloaded [Here](https://drive.google.com/drive/folders/1lw_1jITafEQ9DvMys_S6aYwtNApYKWsz?usp=sharing).
+- Pretrained models and Datasets can be downloaded [[Here](https://drive.google.com/drive/folders/1lw_1jITafEQ9DvMys_S6aYwtNApYKWsz?usp=sharing)].
 	- If you have downloaded the pretrained models，please put them to './pretrain_models'.
 	- If you have downloaded the datasets，please put them to './dataset'.
 

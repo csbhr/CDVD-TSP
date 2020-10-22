@@ -9,8 +9,8 @@
 By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://baihaoran.xyz/about), and Jinhui Tang
 
 ## Updates
-[2020-10-22] Inference results on DVD and GOPRO are available [[Here]](https://drive.google.com/drive/folders/1lMpj-fkT89JfMOvTnqXMzfa57zCT8-2s?usp=sharing)  
-[2020-10-10] Metrics(PSNR/SSIM) calculating codes are available [[Here]](https://github.com/csbhr/OpenUtility#chapter-calculating-metrics)  
+[2020-10-22] Inference results on DVD and GOPRO are available [[Here]](https://drive.google.com/drive/folders/1lMpj-fkT89JfMOvTnqXMzfa57zCT8-2s?usp=sharing)!  
+[2020-10-10] Metrics(PSNR/SSIM) calculating codes are available [[Here]](https://github.com/csbhr/OpenUtility#chapter-calculating-metrics)!  
 [2020-08-04] Inference logs are available [[Here]](https://drive.google.com/drive/folders/1lMpj-fkT89JfMOvTnqXMzfa57zCT8-2s?usp=sharing)!  
 [2020-03-07] Paper is available!  
 [2020-03-31] We further train the model to convergence, and the pretrained model is available!  

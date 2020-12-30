@@ -33,6 +33,7 @@ More detailed analysis and experimental results are included in [[Project Page]]
 
 ## Dependencies
 
+- We use the implementation of PWC-Net by [[sniklaus/pytorch-pwc]](https://github.com/sniklaus/pytorch-pwc)
 - Linux (Tested on Ubuntu 18.04)
 - Python 3 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
 - [PyTorch 0.4.1](https://pytorch.org/): `conda install pytorch=0.4.1 torchvision cudatoolkit=9.2 -c pytorch`

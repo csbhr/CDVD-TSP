@@ -4,9 +4,9 @@
 [![Python](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/pytorch-0.4.1-%237732a8)](https://pytorch.org/)
 
-#### [Paper](https://arxiv.org/abs/2004.02501) | [Project Page](https://baihaoran.xyz/projects/cdvd-tsp/index.html) | [Discussion](https://github.com/csbhr/CDVD-TSP/issues)
+#### [Paper](https://arxiv.org/abs/2004.02501) | [Project Page](https://csbhr.github.io/projects/cdvd-tsp/index.html) | [Discussion](https://github.com/csbhr/CDVD-TSP/issues)
 ### Cascaded Deep Video Deblurring Using Temporal Sharpness Prior
-By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://baihaoran.xyz/about), and Jinhui Tang
+By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://csbhr.github.io/about), and Jinhui Tang
 
 ## Updates
 [2020-10-22] Inference results on DVD and GOPRO are available [[Here]](https://drive.google.com/drive/folders/1lMpj-fkT89JfMOvTnqXMzfa57zCT8-2s?usp=sharing)!  
@@ -29,7 +29,7 @@ Quantitative results on the benchmark dataset by Su et al. [24]. All the restore
 Quantitative results on the GOPRO dataset by Nah et al.[20].  
 ![table-2](https://s1.ax1x.com/2020/03/31/GQYZi8.png)  
 
-More detailed analysis and experimental results are included in [[Project Page]](https://baihaoran.xyz/projects/cdvd-tsp/index.html).
+More detailed analysis and experimental results are included in [[Project Page]](https://csbhr.github.io/projects/cdvd-tsp/index.html).
 
 ## Dependencies
 

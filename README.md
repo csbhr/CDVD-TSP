@@ -11,23 +11,21 @@ By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://csbhr.github.io
 ## Updates
 [2021-05-23] Many improvements to code.
 - Several warnings and errors were addressed
-  - Issues Fixed [#12](https://github.com/csbhr/CDVD-TSP/issues/12),
-  [#22](https://github.com/csbhr/CDVD-TSP/issues/22),
-  [#24](https://github.com/csbhr/CDVD-TSP/issues/24),
-  [#26](https://github.com/csbhr/CDVD-TSP/issues/26)
+  - Issues Fixed [#12](https://github.com/csbhr/CDVD-TSP/issues/12), [#22](https://github.com/csbhr/CDVD-TSP/issues/22), [#24](https://github.com/csbhr/CDVD-TSP/issues/24), [#26](https://github.com/csbhr/CDVD-TSP/issues/26)
   - PyTorch 1.8.1, Python 3.8, & Cuda 10.2 has been tested
   - PyTorch 0.4.1, Python 3.7, & Cuda 9.2 should still work
     - However, this hasn't been verified for due to test computer unable to run Cuda 9.2
     - It appears that the graphics card is too new for Cuda 9.2
+  - Inference no longer requires gt images [#12](https://github.com/csbhr/CDVD-TSP/issues/12), [#22](https://github.com/csbhr/CDVD-TSP/issues/22), [#26](https://github.com/csbhr/CDVD-TSP/issues/26)
   - Added `if __name__ == '__main__':` to `main.py` to resolve [#24](https://github.com/csbhr/CDVD-TSP/issues/24)
   - `optimizer.step()` was added prior to `lr_scheduler.step()`
     - Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details [Here](https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate)
-  - Added align_corner=True parameter to `nn.functional.grid_sample` in `flow_pwc.py` since that was the behavior for PyTorch 0.4.1.
-    - This behavior was changed in PyTorch 1.3.0 from `True` to `False`
+  - Added align_corners=True parameter to `nn.functional.grid_sample` in `flow_pwc.py` since that was the behavior for PyTorch 0.4.1.
+    - This behavior was changed in PyTorch 1.3.0 from `True` to `False`. See more details [Here](https://github.com/pytorch/pytorch/releases/tag/v1.3.0)
   - Windows cannot have a colon in a filename.
     - Changed filenames with date time from `YYYY-MM-DD hh:mm:ss` to `YYYY-MM-DDThhmmss` per [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
 - Changed `log.txt` and `config.txt` files to have the time added to them so that each new run will have a new file. Especially handy for a `--resume`
-- `n_frames_per_video` increased from 100 to 200 in order to take full advantage of all of training datasets.
+- `n_frames_per_video` increased from 100 to 200 in order to take full advantage of all of the frames in the training datasets.
 - Images are no longer saved by default during test phase of epoch.
   - There was no way to disable with a switch prior to this change
   - Can be enabled with `--save_images` option
@@ -37,7 +35,6 @@ By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://csbhr.github.io
 - PDF plots no longer created during 1st epoch due to lack of data
   - L1, HEM, & Total Loss plots are now combined in one plot instead of 3
   - PSNR plot no longer has a legend since it was blank
-- Inference no longer requires gt images
 - Inference will handle border situations like this
   - For a video with 5 frames [1, 2, 3, 4, 5] it will use a list of frames [3, 2, 1, 2, 3, 4, 5, 4, 3]
   - Previous handling of the same clip would produce a singe frame [3]

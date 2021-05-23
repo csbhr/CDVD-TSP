@@ -206,7 +206,7 @@ python inference.py --data_path path/to/data --model_path path/to/pretrained/mod
     howpublished = {\url{https://github.com/csbhr/CDVD-TSP}}
 }
 ```
-### Citation 2
+### Citation 3
 ```
 @misc{pytorch-pwc,
     author = {Simon Niklaus},

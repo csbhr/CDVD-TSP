@@ -14,7 +14,7 @@ By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://csbhr.github.io
   - Issues Fixed [#12](https://github.com/csbhr/CDVD-TSP/issues/12), [#22](https://github.com/csbhr/CDVD-TSP/issues/22), [#24](https://github.com/csbhr/CDVD-TSP/issues/24), [#26](https://github.com/csbhr/CDVD-TSP/issues/26)
   - PyTorch 1.8.1, Python 3.8, & Cuda 10.2 has been tested
   - PyTorch 0.4.1, Python 3.7, & Cuda 9.2 should still work
-    - However, this hasn't been verified for due to test computer unable to run Cuda 9.2
+    - However, this hasn't been verified due to test computer unable to run Cuda 9.2
     - It appears that the graphics card is too new for Cuda 9.2
   - Inference no longer requires gt images [#12](https://github.com/csbhr/CDVD-TSP/issues/12), [#22](https://github.com/csbhr/CDVD-TSP/issues/22), [#26](https://github.com/csbhr/CDVD-TSP/issues/26)
   - Added `if __name__ == '__main__':` to `main.py` to resolve [#24](https://github.com/csbhr/CDVD-TSP/issues/24)

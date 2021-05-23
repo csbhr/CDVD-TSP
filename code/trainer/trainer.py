@@ -2,7 +2,7 @@ import os
 import torch
 import torch.optim as optim
 import torch.optim.lr_scheduler as lr_scheduler
-
+from datetime import datetime
 
 class Trainer:
     def __init__(self, args, loader, my_model, my_loss, ckp):
@@ -19,7 +19,14 @@ class Trainer:
         if args.load != '.':
             self.optimizer.load_state_dict(torch.load(os.path.join(ckp.dir, 'optimizer.pt')))
             for _ in range(len(ckp.psnr_log)):
+                # Starting with PyTorch 1.1.0 and later optimizer.step() must be called before scheduler.step()
+                self.optimizer.step()
                 self.scheduler.step()
+            checkpoint = torch.load(os.path.join(ckp.dir, 'checkpoint.tar'))
+            self.args.total_train_time = checkpoint['total_train_time']
+            self.args.total_test_time  = checkpoint['total_test_time']
+            self.args.epochs_completed = checkpoint['epochs_completed']
+            self.args.start_time = datetime.now() - (self.args.total_test_time + self.args.total_train_time)
 
     def make_optimizer(self):
         kwargs = {'lr': self.args.lr, 'weight_decay': self.args.weight_decay}
@@ -40,5 +47,5 @@ class Trainer:
             self.test()
             return True
         else:
-            epoch = self.scheduler.last_epoch + 1
+            epoch = self.scheduler.last_epoch
             return epoch >= self.args.epochs

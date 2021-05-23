@@ -73,7 +73,7 @@ class CDVD_TSP(nn.Module):
     def forward(self, x):
         frame_list = [x[:, i, :, :, :] for i in range(self.n_sequence)]
 
-        # Interation 1
+        # Iteration 1
         warped01, _, _, flow_mask01 = self.flow_net(frame_list[1], frame_list[0])
         warped21, _, _, flow_mask21 = self.flow_net(frame_list[1], frame_list[2])
         warped12, _, _, flow_mask12 = self.flow_net(frame_list[2], frame_list[1])
@@ -100,7 +100,7 @@ class CDVD_TSP(nn.Module):
         concated = torch.cat([warped23, frame_list[3], warped43, luckiness], dim=1)
         recons_3, _ = self.recons_net(concated)
 
-        # Interation 2
+        # Iteration 2
         warped_recons12, _, _, flow_mask_recons12 = self.flow_net(recons_2, recons_1)
         warped_recons32, _, _, flow_mask_recons32 = self.flow_net(recons_2, recons_3)
         frame_warp_list = [warped_recons12, recons_2, warped_recons32]

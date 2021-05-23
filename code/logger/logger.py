@@ -19,7 +19,8 @@ class Logger:
 
         if args.load == '.':
             if args.save == '.':
-                args.save = datetime.datetime.now().strftime('%Y%m%d_%H:%M')
+                args.save = datetime.datetime.now().strftime("%Y-%m-%d", now_time) + "T"\
+                            + datetime.datetime.now().strftime("%H%M%S", now_time)
             self.dir = args.experiment_dir + args.save
         else:
             self.dir = args.experiment_dir + args.load
@@ -40,9 +41,10 @@ class Logger:
 
         print('Save Path : {}'.format(self.dir))
 
-        open_type = 'a' if os.path.exists(self.dir + '/log.txt') else 'w'
-        self.log_file = open(self.dir + '/log.txt', open_type)
-        with open(self.dir + '/config.txt', open_type) as f:
+        now_time_file = args.start_time.strftime("%Y-%m-%dT%H%M%S")
+        open_type = 'a' if os.path.exists(self.dir + '/log_{}.txt'.format(now_time_file)) else 'w'
+        self.log_file = open(self.dir + '/log_{}.txt'.format(now_time_file), open_type)
+        with open(self.dir + '/config_{}.txt'.format(now_time_file), open_type) as f:
             f.write('From epoch {}...'.format(len(self.psnr_log)) + '\n\n')
             for arg in vars(args):
                 f.write('{}: {}\n'.format(arg, getattr(args, arg)))
@@ -51,14 +53,22 @@ class Logger:
     def write_log(self, log):
         print(log)
         self.log_file.write(log + '\n')
+        self.log_file.flush() # added to keep the log file up to date
 
     def save(self, trainer, epoch, is_best):
         trainer.model.save(self.dir, epoch, is_best)
         torch.save(self.psnr_log, os.path.join(self.dir, 'psnr_log.pt'))
         torch.save(trainer.optimizer.state_dict(), os.path.join(self.dir, 'optimizer.pt'))
+        torch.save({'epoch': epoch,
+                    'total_train_time': self.args.total_train_time,
+                    'total_test_time': self.args.total_test_time,
+                    'epochs_completed': self.args.epochs_completed
+                   },
+                   os.path.join(self.dir, 'checkpoint.tar'))
         trainer.loss.save(self.dir)
-        trainer.loss.plot_loss(self.dir, epoch)
-        self.plot_psnr_log(epoch)
+        if epoch > 1:
+            trainer.loss.plot_loss(self.dir, epoch)
+            self.plot_psnr_log(epoch)
 
     def save_images(self, filename, save_list, epoch):
         if self.args.task == 'VideoDeblur':
@@ -115,7 +125,7 @@ class Logger:
         fig = plt.figure()
         plt.title('PSNR Graph')
         plt.plot(axis, self.psnr_log.numpy())
-        plt.legend()
+        #plt.legend() # Does not need a legend
         plt.xlabel('Epochs')
         plt.ylabel('PSNR')
         plt.grid(True)

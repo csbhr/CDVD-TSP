@@ -1,3 +1,10 @@
 /code/.idea/
 */__pycache__
 .DS_Store
+dataset/*
+experiment/
+infer_results/
+inference_results_log/
+paper/
+pretrain_models/
+*.pyc

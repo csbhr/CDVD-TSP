@@ -80,17 +80,17 @@ parser.add_argument('--experiment_dir', type=str, default='../experiment/',
 parser.add_argument('--pretrain_models_dir', type=str, default='../pretrain_models/',
                     help='file name to save')
 parser.add_argument('--save', type=str, default='CDVD_TSP_Video_Deblur',
-                    help='file name to save')
+                    help='experiment name to save')
 parser.add_argument('--save_middle_models', action='store_true',
                     help='save all intermediate models')
 parser.add_argument('--load', type=str, default='.',
-                    help='file name to load')
+                    help='experiment name to load')
 parser.add_argument('--resume', action='store_true',
-                    help='resume from the latest if true')
+                    help='resume from the latest complete epoch')
 parser.add_argument('--print_every', type=int, default=100,
                     help='how many batches to wait before logging training status')
-parser.add_argument('--save_images', default=True, action='store_true',
-                    help='save images')
+parser.add_argument('--save_images', action='store_true',
+                    help='save images during test phase of epoch')
 
 args = parser.parse_args()
 template.set_template(args)

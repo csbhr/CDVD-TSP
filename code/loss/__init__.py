@@ -98,22 +98,24 @@ class Loss(nn.modules.loss._Loss):
         n_samples = batch + 1
         log = []
         for l, c in zip(self.loss, self.log[-1]):
-            log.append('[{}: {:.4f}]'.format(l['type'], c / n_samples))
+            log.append('[{}: {:.6f}]'.format(l['type'], c / n_samples))
 
         return ''.join(log)
 
     def plot_loss(self, apath, epoch):
-        axis = np.linspace(1, epoch, epoch)
-        for i, l in enumerate(self.loss):
-            label = '{} Loss'.format(l['type'])
+        if epoch > 1:
+            axis = np.linspace(1, epoch, epoch)
             fig = plt.figure()
-            plt.title(label)
-            plt.plot(axis, self.log[:, i].numpy(), label=label)
+            plt.title('L1 & HEM Loss')
+            for i, l in enumerate(self.loss):
+                label = '{} Loss'.format(l['type'])
+                plt.plot(axis, self.log[:, i].numpy(), label=label)
             plt.legend()
             plt.xlabel('Epochs')
             plt.ylabel('Loss')
             plt.grid(True)
-            plt.savefig('{}/loss_loss_{}.pdf'.format(apath, l['type']))
+            #plt.savefig('{}/loss_loss_{}.pdf'.format(apath, l['type']))
+            plt.savefig('{}/loss.pdf'.format(apath))
             plt.close(fig)
 
     def get_loss_module(self):

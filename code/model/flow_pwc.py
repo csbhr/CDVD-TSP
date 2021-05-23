@@ -74,9 +74,11 @@ class Flow_PWC(nn.Module):
         vgrid[:, 1, :, :] = 2.0 * vgrid[:, 1, :, :].clone() / max(H - 1, 1) - 1.0
 
         vgrid = vgrid.permute(0, 2, 3, 1)
-        output = nn.functional.grid_sample(x, vgrid, padding_mode='border')
+				# Default grid_sample and affine_grid behavior has changed to align_corners=False since 1.3.0. Please specify align_corners=True if the old behavior is desired. See the documentation of grid_sample for details.
+				# Code was developed for 0.4.1
+        output = nn.functional.grid_sample(x, vgrid, padding_mode='border', align_corners=True)
         mask = torch.autograd.Variable(torch.ones(x.size())).cuda()
-        mask = nn.functional.grid_sample(mask, vgrid)
+        mask = nn.functional.grid_sample(mask, vgrid, align_corners=True)
 
         mask[mask < 0.999] = 0
         mask[mask > 0] = 1
@@ -119,9 +121,11 @@ def Backward(tensorInput, tensorFlow, device='cuda'):
                             tensorFlow[:, 1:2, :, :] / ((tensorInput.size(2) - 1.0) / 2.0)], 1)
     tensorInput = torch.cat([tensorInput, Backward_tensorPartial[str(tensorFlow.size())]], 1)
 
+    # Default grid_sample and affine_grid behavior has changed to align_corners=False since 1.3.0. Please specify align_corners=True if the old behavior is desired. See the documentation of grid_sample for details.
+    # Code was developed for 0.4.1
     tensorOutput = torch.nn.functional.grid_sample(input=tensorInput, grid=(
             Backward_tensorGrid[str(tensorFlow.size())] + tensorFlow).permute(0, 2, 3, 1), mode='bilinear',
-                                                   padding_mode='zeros')
+                                                   padding_mode='zeros', align_corners=True)
 
     tensorMask = tensorOutput[:, -1:, :, :];
     tensorMask[tensorMask > 0.999] = 1.0;

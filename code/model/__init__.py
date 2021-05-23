@@ -76,6 +76,7 @@ class Model(nn.Module):
                 torch.load(os.path.join(apath, 'model', 'model_latest.pt'), **kwargs),
                 strict=False
             )
+            self.args.load = self.args.save
         elif self.args.test_only:
             self.get_model().load_state_dict(
                 torch.load(os.path.join(apath, 'model', 'model_best.pt'), **kwargs),

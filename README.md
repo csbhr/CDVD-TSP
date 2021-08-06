@@ -6,7 +6,7 @@
 
 #### [Paper](https://arxiv.org/abs/2004.02501) | [Project Page](https://csbhr.github.io/projects/cdvd-tsp/index.html) | [Discussion](https://github.com/csbhr/CDVD-TSP/issues)
 ### Cascaded Deep Video Deblurring Using Temporal Sharpness Prior
-By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://csbhr.github.io/about), and Jinhui Tang
+By [Jinshan Pan](https://jspan.github.io/), [Haoran Bai](https://csbhr.github.io/), and Jinhui Tang
 
 ## Updates
 [2020-10-22] Inference results on DVD and GOPRO are available [[Here]](https://drive.google.com/drive/folders/1lMpj-fkT89JfMOvTnqXMzfa57zCT8-2s?usp=sharing)!  
